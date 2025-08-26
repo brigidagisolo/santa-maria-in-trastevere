@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basilica di Santa Maria in Trastevere</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Header + Navigation -->
+<header>
+  <nav class="navbar">
+    <ul class="nav-menu">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#storia">Storia</a></li>
+      <li><a href="#contatti">Contatti</a></li>
+      <li><a href="#donazioni">Donazioni</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Hero Section -->
+<section id="hero">
+  <h1>Basilica di Santa Maria in Trastevere</h1>
+</section>
+
+<!-- Church Hours -->
+<section id="orari" class="fade-in">
+  <h2>Orari della Chiesa</h2>
+  <p><strong>Feriali:</strong> 08:00 - 12:00 / 16:00 - 19:00</p>
+  <p><strong>Festivi:</strong> 09:00 - 13:00 / 17:00 - 20:00</p>
+</section>
+
+<!-- Events -->
+<section id="eventi" class="fade-in">
+  <h2>Eventi</h2>
+  <ul class="events-list">
+    <li>
+      <img src="hero-placeholder.jpg" alt="Evento" class="event-img">
+      <strong>Messa Solenne</strong> - 1 Set 2025<br>
+      Messa con canto corale alle 11:00
+    </li>
+    <li>
+      <img src="hero-placeholder.jpg" alt="Evento" class="event-img">
+      <strong>Concerto di Organo</strong> - 5 Set 2025<br>
+      Concerto serale alle 19:00
+    </li>
+  </ul>
+</section>
+
+<!-- History -->
+<section id="storia" class="fade-in">
+  <h2>La Storia della Basilica</h2>
+  <p>La Basilica di Santa Maria in Trastevere è una delle chiese più antiche di Roma...</p>
+</section>
+
+<!-- Contact -->
+<section id="contatti" class="fade-in">
+  <h2>Contatti</h2>
+  <p>Email: info@santamariatrastevere.it</p>
+  <p>Telefono: +39 06 5811234</p>
+  <p>Indirizzo: Piazza di Santa Maria in Trastevere, 00153 Roma</p>
+</section>
+
+<!-- Donations -->
+<section id="donazioni" class="fade-in">
+  <h2>Dona alla Basilica</h2>
+  <p>Il tuo contributo aiuta a preservare la Basilica e le attività culturali.</p>
+  <a href="https://www.paypal.com/donate?hosted_button_id=YOUR_ID" class="donate-button">Dona con PayPal</a>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2025 Basilica di Santa Maria in Trastevere</p>
+</footer>
+
+<script>
+  // Fade-in animation
+  const faders = document.querySelectorAll('.fade-in');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  faders.forEach(fader => observer.observe(fader));
+</script>
+
+</body>
+</html>
