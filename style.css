@@ -8,9 +8,10 @@ body {
 }
 
 /* Headings */
-h1, h2, h3 {
+h1, h2, h3, h4 {
   font-family: 'Playfair Display', serif;
   color: #b8860b;
+  margin-top: 0;
 }
 
 /* Navbar */
@@ -50,11 +51,35 @@ h1, h2, h3 {
   text-shadow: 1px 1px 4px #000;
 }
 
+/* Content Wrapper */
+.content-wrapper {
+  display: flex;
+  max-width: 1200px;
+  margin: 50px auto;
+  gap: 40px;
+  padding: 0 20px;
+}
+main {
+  flex: 3;
+}
+.sidebar {
+  flex: 1;
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+.sidebar h3 {
+  margin-top: 0;
+}
+.sidebar ul {
+  list-style: disc inside;
+  padding-left: 0;
+}
+
 /* Sections */
 section {
-  max-width: 900px;
-  margin: 50px auto;
-  padding: 20px;
+  margin-bottom: 50px;
 }
 
 /* Events */
@@ -64,14 +89,22 @@ section {
 }
 .events-list li {
   display: flex;
-  gap: 15px;
+  flex-direction: column;
+  gap: 10px;
   margin-bottom: 20px;
-  align-items: flex-start;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+.events-list li:hover {
+  transform: translateY(-5px);
 }
 .event-img {
-  width: 120px;
-  height: 80px;
-  object-fit: cover;
+  width: 100%;
+  height: auto;
   border-radius: 6px;
 }
 
@@ -84,18 +117,46 @@ section {
   display: inline-block;
   text-decoration: none;
   margin-top: 15px;
-  transition: background 0.3s;
+  transition: background 0.3s, box-shadow 0.3s;
 }
 .donate-button:hover {
   background: #805000;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
 /* Footer */
 footer {
-  text-align: center;
-  padding: 20px;
   background: #f5f5f5;
+  padding: 20px;
   margin-top: 40px;
+  text-align: center;
+}
+.footer-widgets {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto 20px;
+  padding: 20px;
+}
+.footer-widgets .widget {
+  flex: 1;
+  min-width: 200px;
+  margin: 10px;
+}
+.footer-widgets h4 {
+  color: #b8860b;
+}
+.footer-widgets ul {
+  list-style: none;
+  padding-left: 0;
+}
+.footer-widgets ul li a {
+  color: #333;
+  text-decoration: none;
+}
+.footer-widgets ul li a:hover {
+  text-decoration: underline;
 }
 
 /* Fade-in Animation */
@@ -110,17 +171,11 @@ footer {
 }
 
 /* Responsive */
-@media (max-width: 768px) {
-  .nav-menu {
+@media (max-width: 1024px) {
+  .content-wrapper {
     flex-direction: column;
-    gap: 10px;
   }
-  .events-list li {
-    flex-direction: column;
-    align-items: center;
-  }
-  .event-img {
-    width: 100%;
-    height: auto;
+  .sidebar {
+    margin-top: 30px;
   }
 }
